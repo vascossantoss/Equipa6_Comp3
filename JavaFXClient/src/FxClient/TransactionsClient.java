@@ -164,6 +164,7 @@ public class TransactionsClient extends Application {
 			btnCancel.setOnAction(ae -> {
 				System.out.println("Cancelling...");
 				fillTableView(tableView);
+				primaryStage.close();
 			});
 			
 					

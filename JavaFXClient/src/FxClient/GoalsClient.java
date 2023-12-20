@@ -152,6 +152,7 @@ public class GoalsClient extends Application {
 			btnCancel.setOnAction(ae -> {
 				System.out.println("Cancelling...");
 				fillTableView(tableView);
+				primaryStage.close();
 			});
 			
 					

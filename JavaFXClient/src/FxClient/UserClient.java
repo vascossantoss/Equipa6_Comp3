@@ -147,6 +147,7 @@ public class UserClient extends Application {
 			btnCancel.setOnAction(ae -> {
 				System.out.println("Cancelling...");
 				fillTableView(tableView);
+				primaryStage.close();
 			});
 			
 					

@@ -147,9 +147,9 @@ public class CategoriesClient extends Application {
 			btnCancel.setOnAction(ae -> {
 				System.out.println("Cancelling...");
 				fillTableView(tableView);
+				primaryStage.close();
 			});
 			
-					
 			
 			root.add(btnNew, 0, 1, 1, 1);
 			root.add(btnEdit, 1, 1, 1, 1);
@@ -197,8 +197,7 @@ public class CategoriesClient extends Application {
 			
 			Response response = service.path("deleteCategory")
 					.path(Integer.toString(categoryId)).request().delete();
-
-			System.out.println("status:" + response.getStatus());	
+	
 			if (response.getStatus() < 200 || response.getStatus() > 299) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 			} 
@@ -227,7 +226,6 @@ public class CategoriesClient extends Application {
 			lblName.setId("lblName");
 			root.add(txtName, 1, 0, 1, 1);
 			
-
 			Label lblLimit = new Label("Limit");
 			root.add(lblLimit, 0, 1, 1, 1);
 
