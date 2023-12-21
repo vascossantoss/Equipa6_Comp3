@@ -57,16 +57,11 @@ public class CategoriesClient extends Application {
 		@Override
 		public void start(Stage primaryStage) throws Exception {
 
-			//FlowPane root = new FlowPane();
+			
 			GridPane root = new GridPane();
 			
-			/* We will use the TableView component to list the books */
-			
 			TableView tableView = new TableView();
-
-			/* Each of the columns must be linked to a colum in your model class (Book) - 
-			 * Pay attention to the type
-			 */		
+	
 	        TableColumn<Category, String> column1 = new TableColumn<>("Name");
 	        column1.setMinWidth(200);
 	        column1.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -74,13 +69,10 @@ public class CategoriesClient extends Application {
 	        TableColumn<Category, String> column2 = new TableColumn<>("Limit");
 	        column2.setMinWidth(200);
 	        column2.setCellValueFactory(new PropertyValueFactory<>("limit"));
-	        
-
-	        /* Add the columns to the table view */
+	  
 	        tableView.getColumns().add(column1);
 	        tableView.getColumns().add(column2);
 	        
-	        // Load objects into table calling the REST service
 	        fillTableView(tableView);
 
 	        /*This command line gets the selected row and the corresponding Model Instance (Book)*/
@@ -137,7 +129,7 @@ public class CategoriesClient extends Application {
 			btnDelete.setOnAction(ae -> {
 				System.out.println("Deleting data... ");				
 
-				if (showConfirmationDialog("Are you sure you want to delete the category? ")) {
+				if (showConfirmationDialog("Are you sure you want to delete the category? ")) {	
 					deleteCategory(selectedItems.get(0).getId());
 					fillTableView(tableView);
 				}			
@@ -305,7 +297,7 @@ public class CategoriesClient extends Application {
 				}
 			} catch (Exception e) {
 				showMessage("Error while saving the Category.", AlertType.ERROR);
-				//throw new RuntimeException("Failed to save the book.");
+				
 			}
 		}
 		

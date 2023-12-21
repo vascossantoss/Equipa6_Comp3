@@ -71,7 +71,7 @@ public class UserClient extends Application {
 	        column1.setMinWidth(200);
 	        column1.setCellValueFactory(new PropertyValueFactory<>("username"));
 
-	        TableColumn<Userr, String> column2 = new TableColumn<>("PassWord");
+	        TableColumn<Userr, String> column2 = new TableColumn<>("Password");
 	        column2.setMinWidth(200);
 	        column2.setCellValueFactory(new PropertyValueFactory<>("password"));
 	        
@@ -138,7 +138,7 @@ public class UserClient extends Application {
 				System.out.println("Deleting data... ");				
 
 				if (showConfirmationDialog("Are you sure you want to delete this user? ")) {
-					deleteUserr(selectedItems.get(0).getId());
+					deleteUser(selectedItems.get(0).getId());
 					fillTableView(tableView);
 				}			
 				
@@ -171,12 +171,6 @@ public class UserClient extends Application {
 			primaryStage.show();
 		}
 		
-		private void deleteUserr(int id) {
-			// TODO Auto-generated method stub
-			
-		}
-
-
 		private void fillTableView(TableView tableView) {
 	        tableView.getItems().clear();
 	        List<Userr> users = getUsers();
@@ -227,7 +221,7 @@ public class UserClient extends Application {
 	       
 			GridPane root = new GridPane();
 
-			Label lblUserName = new Label("UserName");
+			Label lblUserName = new Label("Username");
 			root.add(lblUserName, 0, 0, 1, 1);
 			
 			TextField txtUserName = new TextField();
@@ -235,7 +229,7 @@ public class UserClient extends Application {
 			root.add(txtUserName, 1, 0, 1, 1);
 			
 
-			Label lblpassword = new Label("PassWord");
+			Label lblpassword = new Label("Password");
 			root.add(lblpassword, 0, 1, 1, 1);
 
 			TextField txtpassword = new TextField();

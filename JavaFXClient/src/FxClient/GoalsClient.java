@@ -76,8 +76,8 @@ public class GoalsClient extends Application {
 	        column2.setCellValueFactory(new PropertyValueFactory<>("amount"));
 	        
 	        TableColumn<Goal, String> column3 = new TableColumn<>("Saved");
-	        column2.setMinWidth(200);
-	        column2.setCellValueFactory(new PropertyValueFactory<>("saved"));
+	        column3.setMinWidth(200);
+	        column3.setCellValueFactory(new PropertyValueFactory<>("saved"));
 	        
 
 	        /* Add the columns to the table view */

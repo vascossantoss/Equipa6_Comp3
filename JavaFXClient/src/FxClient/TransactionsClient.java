@@ -151,16 +151,6 @@ public class TransactionsClient extends Application {
 				fillTableView(tableView);
 			});
 			
-//			btnDelete.setOnAction(ae -> {
-//				System.out.println("Deleting data... ");				
-//
-//				if (showConfirmationDialog("Are you sure you want to delete the book? ")) {
-//					deleteBook(selectedItems.get(0).getId());
-//					fillTableView(tableView);
-//				}			
-//				
-//			});
-			
 			btnCancel.setOnAction(ae -> {
 				System.out.println("Cancelling...");
 				fillTableView(tableView);
